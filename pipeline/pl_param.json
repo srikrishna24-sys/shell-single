@@ -1,15 +1,15 @@
 {
-	"name": "pl_array",
+	"name": "pl_param",
 	"properties": {
 		"activities": [
 			{
-				"name": "Act_Filter",
+				"name": "Filter1",
 				"type": "Filter",
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@variables('DataArray')",
+						"value": "@pipeline().parameters.account_name",
 						"type": "Expression"
 					},
 					"condition": {
@@ -21,18 +21,10 @@
 		],
 		"parameters": {
 			"account_name": {
-				"type": "string",
-				"defaultValue": "ab-867"
-			}
-		},
-		"variables": {
-			"DataArray": {
-				"type": "Array",
+				"type": "array",
 				"defaultValue": [
-					"aaa",
-					"bbb",
-					"ccc",
-					"ddd"
+					"aa",
+					"bb"
 				]
 			}
 		},
