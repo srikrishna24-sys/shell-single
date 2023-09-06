@@ -1,0 +1,35 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Act_Filter",
+				"type": "Filter",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('DataArray')",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@not(equals(item(),'ccc'))",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"DataArray": {
+				"type": "Array",
+				"defaultValue": [
+					"aaa",
+					"bbb",
+					"ccc",
+					"ddd"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
